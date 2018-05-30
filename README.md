@@ -12,7 +12,7 @@ There are currently no known resources that archive the content of orphaned bloc
 If you run a node, you can extract the pertinent information from your records by running the single command below.
 `grep -B2 Hydrogen\|Wolfram\|Helium\|Lithium\|ALTERNATIVE\|REORG\|stopped\ successfully -E bitmonero.log*`
 
-*Note: grep is a command that searches for text in files, {Hydrogen, Wolfram, Helium, and Lithium} are Monero release names, and {"ALTERNATIVE" and "REORG"} search strings are used to extract the relevant events**
+*Note: grep is a command that searches for text in files, {Hydrogen, Wolfram, Helium, and Lithium} are Monero release names, and {"ALTERNATIVE" and "REORG"} search strings are used to extract the relevant events*
 
 Please upload the results here, anonymously if you so please, to strengthen analyses and expand our sample size. You can also email the file (<= 25 MB) to IsthmusCrypto@protonmail.com
 
