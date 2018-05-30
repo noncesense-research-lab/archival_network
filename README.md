@@ -10,9 +10,10 @@ There are currently no known resources that archive the content of orphaned bloc
 **If you run a Monero node, please consider contributing your logs pertaining to alternative blocks and reorgs.** Different nodes will receive different alternative blocks, and may undergo different reorganizations. Consequently, differences between your logs and others may provide important clues about network latency and topology.
 
 If you run a node, you can extract the pertinent information from your records by running the single command:
+
 `grep -B2 Hydrogen\|Wolfram\|Helium\|Lithium\|ALTERNATIVE\|REORG\|stopped\ successfully -E bitmonero.log* > output_log_to_share.txt`
 
-*Note: grep is a command that searches for text in files, {Hydrogen, Wolfram, Helium, and Lithium} are Monero release names, and {"ALTERNATIVE" and "REORG"} search strings are used to extract the relevant events. The "> output_log_to_share.txt" stores the extracted log events in a file with that name. Feel free to change the output filename.
+*Note: grep is a command that searches for text in files, {Hydrogen, Wolfram, Helium, and Lithium} are Monero release names, and {"ALTERNATIVE" and "REORG"} search strings are used to extract the relevant events. The "> output_log_to_share.txt" stores the extracted log events in a file with that name. Feel free to change the output filename.*
 
 Please upload the results here, anonymously if you so please, to strengthen analyses and expand our sample size. You can also email the file (<= 25 MB) to IsthmusCrypto@protonmail.com
 
