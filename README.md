@@ -32,7 +32,7 @@ When two contradictory blocks naturally arise, transaction duplication is expect
 If a double-spend attack is attempted (with or without majority, with or without success), this will be apparent by discrepencies in the receiving stealth addresses. The miner attempting a double spend would necessarily have to include a transaction with the same key image, and a *different receiving stealth address*. While this might happen occasionally due to wallet glitches and other benign activities, an alternative block with several redirected transactions strongly suggests (almost conclusively) an intentional attempted double-spend attack.
 
 ## Provocative Hypotheses
-As the Devil’s advocate, I put forth two hypothesis: 
+As the Devil’s advocate, I put forth two hypotheses: 
 
 H1) At least one solved block has been broadcast to the Monero network (whether accepted or rejected) that attempts to reassign previously-spent Moneroj to a new recipient. 
 
