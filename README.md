@@ -22,6 +22,7 @@ Logs such as those produced by the above command contain the heights when altern
 2. What fraction of these alternative blocks result in reorganization? (is this ratio constant for most nodes?)
 3. Given logs from multiple nodes with overlapping times, how often do the records reflect alternative blocks heard by only some of the miners? (Do 99% of the miners receive 99% of the alternative blocks? 50%/50%?)
 4. What does the homogeneity or heterogeneity of alternative block records suggest about the representativeness of the data set?
+5. Are the observed intervals between alternative blocks explained by any particular function? A Poisson distribution has been suggested as the theoretical expectation. How well does the model match observations? What are the parameters of, and deviations from, the distribution function model?
 
 ### Objective set 3: Double-spend analysis
 Logs that record the content of orphaned blocks can be used to ascertain whether a given alternative block was benign (e.g. arising from network latency) or maliciously presented (e.g. attempting a double-spend attack).
