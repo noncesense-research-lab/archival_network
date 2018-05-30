@@ -36,12 +36,12 @@ As the Devil’s advocate, I put forth two hypotheses:
 
 H1) At least one solved block has been broadcast to the Monero network (whether accepted or rejected) that attempts to reassign previously-spent Moneroj to a new recipient. 
 
-H2) A block described as above has been broadcast and became the longest chain. Both hypotheses could be proven by finding an example.
+H2) A block described as above has been broadcast and attained consensus, becoming the main chain.
 
 ## Speculation
 *Notes from MPKT (extracted from casual correspondence):*
 
-Neither hypothesis is theoretically falsifiable; however, if we can attain the historical records of orphaned block transaction composition and prove that no H1 blocks were widely received, then both hypotheses can be reasonably rejected for practical intents and purposes. It would be good to prove OR confirm absence of evidence in the dataset.
+Both hypotheses could be proven by finding an example. Neither hypothesis is theoretically falsifiable; however, if we can attain the historical records of orphaned block transaction composition and prove that no H1 blocks were widely received, then both hypotheses can be reasonably rejected for practical intents and purposes. It would be good to prove OR confirm absence of evidence in the dataset.
 
 While I doubt H2 is true, I think that H1 is not an outlandish proposition, especially considering the previous large unknown hashrate. By March & April, I’m sure that the multiple ASIC manufacturers were enforcing decentralization on each other; however, the *first* company with working ASICs may have had a window with some pretty decent power (do we know who was running ASICs in December & January before the February hashrate explosion?). 
 
