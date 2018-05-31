@@ -1,4 +1,4 @@
-$ grep -B2 Hydrogen\|Wolfram\|Helium\|Lithium\|ALTERNATE\|REORG\|stopped\ successfully -E bitmonero.log*
+grep -B2 Hydrogen\|Wolfram\|Helium\|Lithium\|ALTERNATE\|REORG\|stopped\ successfully -E bitmonero.log*
 
 bitmonero.log-2018-05-25 09:55:41.604	[P2P6]	INFO 	blockchain.db.lmdb	src/blockchain_db/lmdb/db_lmdb.cpp:534	Size threshold:  6702974976
 bitmonero.log-2018-05-25 09:55:41.604	[P2P6]	INFO 	blockchain.db.lmdb	src/blockchain_db/lmdb/db_lmdb.cpp:536	Percent used: 0.5958  Percent threshold: 0.8000
