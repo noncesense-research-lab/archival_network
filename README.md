@@ -30,12 +30,12 @@ Logs that record the content of orphaned blocks can be used to ascertain whether
 
 When two contradictory blocks naturally arise, transaction duplication is expected since both miners draw from the same memory pool. In the case that two miners independently mine the same transaction, the {ring members, key image, receiving stealth address} will be mirrored in the two blocks.
 
-If a double-spend attack is attempted (with or without majority, with or without success), this will be apparent by discrepencies in the receiving stealth addresses. The miner attempting a double spend would necessarily have to include a transaction with the same key image, and a *different receiving stealth address*. While this might happen occasionally due to wallet glitches and other benign activities, an alternative block with several redirected transactions strongly suggests (almost conclusively) an intentional attempted double-spend attack.
+If two versions of a transaction are generated, they will have the same key image, but different one-time recipient stealth address, and different cryptographic signatures. This could occur benignly, if a user regenerates the transaction to the same address (creating a new one-time address in the process). It could also represent a transaction that is being revised to spend to a different recipient. If a double-spend attack is attempted (with or without majority, with or without success), the minier will necessarily have to include a transaction with the same key image, but a different receiving stealth address and signature. While this might happen occasionally due to wallets or users refreshing transactions, an alternative block with several redirected transactions strongly suggests an intentional attempted double-spend attack.
 
 ## Provocative Hypotheses
-As the Devil’s advocate, I put forth two hypotheses: 
+As the Devil’s advocate, I put forth two hypotheses:
 
-H1) At least one solved block has been broadcast to the Monero network (whether accepted or rejected) that attempts to reassign previously-spent Moneroj to a new recipient. 
+H1) At least one solved block has been broadcast to the Monero network (whether accepted or rejected) that attempts to reassign previously-spent Moneroj to a new recipient stealth address.
 
 H2) A block described as above has been broadcast and attained consensus, becoming the main chain.
 
@@ -44,8 +44,8 @@ H2) A block described as above has been broadcast and attained consensus, becomi
 
 Both hypotheses could be proven by finding an example. Neither hypothesis is theoretically falsifiable; however, if we can attain the historical records of orphaned block transaction composition and prove that no H1 blocks were widely received, then both hypotheses can be reasonably rejected for practical intents and purposes. It would be good to prove OR confirm absence of evidence in the dataset.
 
-While I doubt H2 is true, I think that H1 is not an outlandish proposition, especially considering the previous large unknown hashrate. By March & April, I’m sure that the multiple ASIC manufacturers were enforcing decentralization on each other; however, the *first* company with working ASICs may have had a window with some pretty decent power (do we know who was running ASICs in December & January before the February hashrate explosion?). 
+While I doubt H2 is true, I think that H1 is not an outlandish proposition, especially considering the previous large unknown hashrate. By March & April, I’m sure that the multiple ASIC manufacturers were enforcing decentralization on each other; however, the *first* company with working ASICs may have had a window with some pretty decent power (do we know who was running ASICs in December & January before the February hashrate explosion?).
 
-Honestly, if I was an ASIC manufacturer with enough in-house hash rate to noodle around and conduct mining research, I’d totally try solving a contradictory block or two to see what happens. The nature of selling cryptocurrency equipment would strongly disincentivize me from double-spending to rip of an external entity; however I might quietly try it with test transactions between my own wallets if I thought nobody was paying attention. Of course, H2 is unlikely to be true unless one entity had >51% hash. But H1 could be true even due to a minority player conducting some experiments. 
+Honestly, if I was an ASIC manufacturer with enough in-house hash rate to noodle around and conduct mining research, I’d totally try solving a contradictory block or two to see what happens. The nature of selling cryptocurrency equipment would strongly disincentivize me from double-spending to rip of an external entity; however I might quietly try it with test transactions between my own wallets if I thought nobody was paying attention. Of course, H2 is unlikely to be true unless one entity had >51% hash. But H1 could be true even due to a minority player conducting some experiments.
 
 Now that we tweaked PoW algo to kick the ASICS, this is a much less existential question. But I think it would still be good to archive this data moving forward, so that we are prepared for upcoming threats (rapid growth of a vast bontet? FPGA or some kind of ASICs 2.0? A 3-letter agency with a mining farm and an agenda? I suppose we’ll find out …)
