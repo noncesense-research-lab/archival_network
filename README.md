@@ -1,9 +1,9 @@
 # Monero_AltBlock_Research
 *Investigating the frequency of alternative blocks, reorganizations, and attempted or successful double-spend attacks.*
 
-![Logo](/misc/mabr_logo.png
+![Logo](/misc/mabr_logo.png)
 
-IsthmusCrypto, in collaboration with NeptunResearch
+IsthmusCrypto
 
 ## Goals
 ### Objective set 1: Data collection and archiving
