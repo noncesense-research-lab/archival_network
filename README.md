@@ -3,8 +3,6 @@
 
 ![Logo](/misc/mabr_logo.png)
 
-IsthmusCrypto
-
 ## Goals
 ### Objective set 1: Data collection and archiving
 There are currently no known resources that archive the content of orphaned blocks. Furthermore, the frequency of alternative blocks and reorganization is logged by some nodes, but not compiled or analyzed.
