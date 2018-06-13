@@ -71,7 +71,7 @@ There was a fork at height 1592780, and both sides have been archived
 4 blocks long, from height 1589926 (2854 deep), diff 15593988238902517: 5294849d7c578227966a2fb5cb6a4155038464c57c5810d1820b27df826b2487
 1 blocks long, from height 1591490 (1290 deep), diff 15668928217242122: 87c752cdeee4c9ba7aefc879ca1285e39563e1a5c752fc6d8d743a2be452812d
 ```
-## First block at height 1592789
+## First block at height 1592780
 ```
 {
   "major_version": 7, 
@@ -105,7 +105,7 @@ There was a fork at height 1592780, and both sides have been archived
   ]
 }
 ```
-# Alternative block at height 1592789
+# Alternative block at height 1592780
 
 ```
 {
