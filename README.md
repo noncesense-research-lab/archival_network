@@ -1,7 +1,7 @@
 # Monero_Archival_Project
 *Investigating the frequency of alternative blocks, reorganizations, and attempted or successful double-spend attacks.*
 
-![Logo](/misc/mabr_logo.png)
+![Logo](/misc/map_header.png)
 
 ## Goals
 ### Objective set 1: Data collection and archiving
