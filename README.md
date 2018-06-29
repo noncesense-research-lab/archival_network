@@ -1,4 +1,4 @@
-# Monero_AltBlock_Research
+# Monero_Archival_Project
 *Investigating the frequency of alternative blocks, reorganizations, and attempted or successful double-spend attacks.*
 
 ![Logo](/misc/mabr_logo.png)
