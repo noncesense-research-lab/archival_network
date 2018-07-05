@@ -1,0 +1,12 @@
+Height: 1585105/1585105 (100.0%) on mainnet, not mining, net hash 449.07 MH/s, v7, up to date, 1(out)+0(in) connections, uptime 36d 10h 50m 21s
+fastpc@fastpc-desktop:~/mooo_monero/build/release/bin$ ./monerod alt_chain_info
+9 alternate chains found:
+1 blocks long, from height 1584464 (640 deep), diff 15325322454263340: 61cba867465ff6e9bf8c1e99ceb38962d50aabb9be1e424f84928df90b1001a4
+1 blocks long, from height 1584178 (926 deep), diff 15310641818511075: 249f399d2c00b118118f69f2b0ca47e6db79cd94b35be8809aec03af54e0cac1
+1 blocks long, from height 1583266 (1838 deep), diff 15265808498027629: a994c01a733fada66d220c6e54940cba8c947fa1e6ed2c6b1ab316172191ae7c
+1 blocks long, from height 1581289 (3815 deep), diff 15167033295384265: ece72b9a41059f8d245e210b48dc056d1ac43844f5f227e9c50fb154b87fa81d
+1 blocks long, from height 1579812 (5292 deep), diff 15094190104458046: c5e7703f3792238aa137629c8094ea509f73eaf63e6eead5ff53a3cb55997d11
+1 blocks long, from height 1566500 (18604 deep), diff 14377772284513217: 77459465b8dd000c185447617b0d34ed289bff7558f43b39d0f473b59886dc5e
+23 blocks long, from height 1565690 (19414 deep), diff 14333826778565490: 3e52d4418bd8b947bdf1b0019291d30393caa4b69ddf9a563c9054e844b4a0e6
+1 blocks long, from height 1563626 (21478 deep), diff 14208455141149194: 70ff822066a53ad64b04885c89bbe5ce3e537cdc1f7fa0dc55317986f01d1788
+1 blocks long, from height 1562061 (23043 deep), diff 14114669220436252: e97b62109a6303233dcd697fa8545c9fcbc0bf8ed2268fede57ddfc36d8c939c
