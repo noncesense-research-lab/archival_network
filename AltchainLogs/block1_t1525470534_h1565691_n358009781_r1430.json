@@ -1,0 +1,31 @@
+{
+  "major_version": 7, 
+  "minor_version": 7, 
+  "timestamp": 1525470534, 
+  "prev_id": "41c65e7cc3f3497b163e51f8c7582b4d013ea9bf5b6010df2b9d505a50207102", 
+  "nonce": 358009781, 
+  "miner_tx": {
+    "version": 2, 
+    "unlock_time": 1565751, 
+    "vin": [ {
+        "gen": {
+          "height": 1565691
+        }
+      }
+    ], 
+    "vout": [ {
+        "amount": 4713678125966, 
+        "target": {
+          "key": "f856edaf972011235e596c5783ba7ef0eef737954aa9294334120098dc8cda61"
+        }
+      }
+    ], 
+    "extra": [ 1, 156, 176, 196, 188, 77, 71, 141, 206, 165, 172, 182, 5, 140, 128, 31, 95, 6, 209, 208, 97, 235, 206, 6, 250, 23, 18, 255, 125, 224, 249, 248, 237, 2, 8, 0, 0, 1, 117, 92, 1, 0, 0
+    ], 
+    "rct_signatures": {
+      "type": 0
+    }
+  }, 
+  "tx_hashes": [ "1f9831376c541fb6f2b8ffe50fa36ac43a9d31aeeb79ffe15e05d6810dd1de67", "2e58463fb6a544a87326c38bab886e4c45403d4c357ff0fc60c6cd280e60d002", "ce3840de19cc8a754b6887389647d8d59168fc05d1a3d173e1104b60475bf3cb", "3efdceb2bd2b729fb793b86ac518e1a34086935fb0175cd6e0c46b37ffcf52f1", "a6d4af441438cb33e7f9fae641cac1c569b4ef81c324bd3631e3efdb81518493", "66779810e80bb3e31de5ccadc9fbda6f992a705bdd958e714849830b89cc9cc7", "e0743eb46666ac710f7890b5b99b57e0864bbe0620b8d7a9f5c6c17ce7cfb686", "275f040b3f2ccaf0e59ef687cac36913e54abafac59911397e5b040ec698967f", "4f3c0ccdd032787e403e5cc8512d603a6b1727d3df466d6652d61d44f95fa49a", "e3db991e2e3a9cde37eb6638ec9e2f9e5101d16e9ee276237df91a70edea8ddc", "dd64f2d49f835e745e84453f87f82f0e0b728dbf0af4cdbbe0ad75c81dd786ca"
+  ]
+}
