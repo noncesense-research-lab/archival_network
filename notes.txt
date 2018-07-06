@@ -7,3 +7,7 @@ In some cases, it seems that b0 blocks are received (duplicates) more often that
 Duplicates seem to be received sub-second, need to step up recording resolution for latency research
 
 Check for selfish mining in received timestamps
+
+Same version (hash) of blocks comes within single epoch unit
+
+WOAH! Altchain blocks come way after the main chain (time-wise). Why is somebody releasing very belated blocks??
