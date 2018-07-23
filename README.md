@@ -27,7 +27,7 @@ Similarly, we can look for signs of [selfish mining](https://arxiv.org/pdf/1311.
 ### Objective set 4: Network topology and study
 Data from geographically-distributed MAP nodes can be used to study network connectivity and latency. With each new transaction or block broadcast, we can watch the the route(s) and speed with which it propogates across the globe.
 
-### Objective set 5: Double-spend analyses
+### Objective set 5: Double-spend detection 
 Logs that record the content of orphaned blocks can be used to ascertain whether a given alternative block was benign (e.g. arising from network latency) or maliciously presented (e.g. attempting a double-spend attack).
 
 When two contradictory blocks naturally arise, transaction duplication is expected since both miners draw from the same memory pool. In the case that two miners independently mine the same transaction, the {ring members, key image, receiving stealth address} will be mirrored in the two blocks.
@@ -38,7 +38,7 @@ If two versions of a transaction are generated, they will have the same key imag
 We have several plans for making this type of data common and accessible.
 -  Data presentation on a web dashboard that allows interactive exploration of MAP data products such as navigation of side chans, empirical analytics, and a global view of broadcast propogation.
 -  Integration into main Monero code as an *opt-in* daemon setting for users that wish to collect archival data for R & D purposes.
--  While our archival daemon is coded for Monero, the analyses and framework are applicable to all similarly-structured blockchains. In the future, our network of archival node servers may also provide this service for other projects and cryptocurrencies.
+-  While our archival daemon is currently coded for Monero, the analyses and framework are applicable to all similarly-structured blockchains. In the future, our network of archival node servers may also provide these services for other projects and cryptocurrencies.
 
 ## General notes:
 The `documents` directory in this repository contains the roadmap, information for accessing our nodes, specifications, and miscellaneous notes.
