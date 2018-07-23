@@ -19,20 +19,20 @@ Regarding the frequent long side chains (15-30 blocks, up to 70 blocks long):
 4. Based on the timing of the blocks, how much hashrate is being used to mine them?
 5. Does this hashrate come from external sources (e.g. R & D on FPGAs) or correspond with loss of hash power on the main chain?
 
-### Objective set 3: Double-spend analyses
+### Objective set 3: Timing exploration
+Miners can arbitrarily choose the timestamps that they include in the block, so MAP retains both the miner-reported timestamp (MRT) and the node-receipt timestamp (NRT).Comparison of the timestamps in the block against the timestamps when the block was received will reveal how often the miner-reported timestamps are spoofed.
+
+Similarly, we can look for signs of [selfish mining](https://arxiv.org/pdf/1311.0243.pdf) based on the timing with which blocks are received. Ittay Eyal and Emin Gün Sirer [point out](http://hackingdistributed.com/2014/01/15/detecting-selfish-mining/) that "One could detect this doubling-down scenario by looking at the timestamps on successive blocks in the blockchain. Since mining is essentially an independent random process, we'd expect the interblock time gap to be exponentially distributed. Any deviation from this expectation would be suggestive of selfish mining."
+
+### Objective set 4: Network topology and study
+Data from geographically-distributed MAP nodes can be used to study network connectivity and latency. With each new transaction or block broadcast, we can watch the the route(s) and speed with which it propogates across the globe.
+
+### Objective set 5: Double-spend analyses
 Logs that record the content of orphaned blocks can be used to ascertain whether a given alternative block was benign (e.g. arising from network latency) or maliciously presented (e.g. attempting a double-spend attack).
 
 When two contradictory blocks naturally arise, transaction duplication is expected since both miners draw from the same memory pool. In the case that two miners independently mine the same transaction, the {ring members, key image, receiving stealth address} will be mirrored in the two blocks.
 
 If two versions of a transaction are generated, they will have the same key image, but different one-time recipient stealth address, and different cryptographic signatures. This could occur benignly, if a user regenerates the transaction to the same address (creating a new one-time address in the process). It could also represent a transaction that is being revised to spend to a different recipient. If a double-spend attack is attempted (with or without majority, with or without success), the miner will necessarily have to include a transaction with the same key image, but a different receiving stealth address and signature. While this might happen occasionally due to wallets or users refreshing transactions, an alternative block with several redirected transactions strongly suggests an intentional attempted double-spend attack.
-
-### Objective set 4: Network topology and study
-Data from geographically-distributed MAP nodes can be used to study network connectivity and latency. With each new transaction or block broadcast, we can watch the the route(s) and speed with which it propogates across the globe.
-
-### Objective set 5: Timing exploration
-Miners can arbitrarily choose the timestamps that they include in the block, so MAP retains both the miner-reported timestamp (MRT) and the node-receipt timestamp (NRT).Comparison of the timestamps in the block against the timestamps when the block was received will reveal how often the miner-reported timestamps are spoofed.
-
-Similarly, we can look for signs of [selfish mining](https://arxiv.org/pdf/1311.0243.pdf) based on the timing with which blocks are received. Ittay Eyal and Emin Gün Sirer [point out](http://hackingdistributed.com/2014/01/15/detecting-selfish-mining/) that "One could detect this doubling-down scenario by looking at the timestamps on successive blocks in the blockchain. Since mining is essentially an independent random process, we'd expect the interblock time gap to be exponentially distributed. Any deviation from this expectation would be suggestive of selfish mining."
 
 ### General notes:
 The MAP project is a product of Noncesense Research Labs. Feel free to pop into NRL's front lobby on Freenode at #noncesense-research-lab.
