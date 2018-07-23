@@ -1,6 +1,4 @@
 # Monero_Archival_Project
-*Investigating the frequency of alternative blocks, reorganizations, and attempted or successful double-spend attacks.*
-
 ![Logo](/misc/map_header.png)
 
 ## Goals
