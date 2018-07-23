@@ -4,7 +4,7 @@ This document contains information about the current configuration of our VPS-ba
 
 ## Access
 
-`$ ssh map@xxx.xxx.xxx.248` (e.g. for the Frankfurt node)
+`$ ssh map@xxx.xxx.xxx.43` (e.g. for the Tokyo node)
 
 ## Layout
 
@@ -27,6 +27,6 @@ Please start the daemon using the command:
 To watch the daemon output, run:
 `$ tail -f ~/.bitmonero/bitmonero.log`
 
-Uptime is a key goal. If you are doing work or testing that will take archival nodes offline, please contain disrputions to the Frankfurt server.
+Uptime is a key goal. If you are doing work or testing that will take archival nodes offline, please contain disrputions to the Tokyo server.
 
 If you kill monerod, please restart it before exiting (instructions above)
