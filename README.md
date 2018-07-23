@@ -5,7 +5,7 @@
 
 ## Goals
 ### Objective set 1: Data collection and archiving
-There are currently no known resources that archive the content of orphaned blocks or side chains. The total absence of this data precludes analyses that are critical for monitoring the ecosystem and empirically studying mining and network phenomena. Since these types of records are not on the blockchain, they are lost to the sands of time unless intentionally preserved. MAP's central mission is to ensure that we are always collecting and analyzing this key information.
+There are currently no known resources that archive the content of orphaned blocks or side chains. The total absence of this data precludes analyses that are critical for monitoring the ecosystem and empirically studying mining and network phenomena. Since these types of records are not on the blockchain itself, they are lost to the sands of time unless intentionally preserved. MAP's central mission is to ensure that we are always collecting and analyzing this key information.
 
 The Monero Archival Project employs a custom archival daemon (credit: NeptuneResearch) that collects data from orphaned blocks/chains along with notes from the node itself.
 
