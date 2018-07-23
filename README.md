@@ -34,7 +34,7 @@ When two contradictory blocks naturally arise, transaction duplication is expect
 
 If two versions of a transaction are generated, they will have the same key image, but different one-time recipient stealth address, and different cryptographic signatures. This could occur benignly, if a user regenerates the transaction to the same address (creating a new one-time address in the process). It could also represent a transaction that is being revised to spend to a different recipient. If a double-spend attack is attempted (with or without majority, with or without success), the miner will necessarily have to include a transaction with the same key image, but a different receiving stealth address and signature. While this might happen occasionally due to wallets or users refreshing transactions, an alternative block with several redirected transactions strongly suggests an intentional attempted double-spend attack.
 
-### General notes:
+## General notes:
 The `documents` directory in this repository contains the roadmap, information for accessing our nodes, specifications, and miscellaneous notes.
 
 The `analyses` directory includes some preliminary results.
