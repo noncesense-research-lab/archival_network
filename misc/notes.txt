@@ -1,0 +1,15 @@
+scratchpad:
+
+Odd bimodal distribution of lengths of side chains.
+
+Lots that are ~1 deep (presumably natural)... Then a lot more that are longer (due to some second phenomenon)
+
+In some cases, it seems that b0 blocks are received (duplicates) more often that b1 blocks. This might be anecdotal, and temporal analysis separating stats for b0 and b1 will answer for sure
+
+Duplicates seem to be received sub-second, need to step up recording resolution for latency research
+
+Check for selfish mining in received timestamps
+
+Same version (hash) of blocks comes within single epoch unit
+
+WOAH! Altchain blocks come way after the main chain (time-wise). Why is somebody releasing very belated blocks??
