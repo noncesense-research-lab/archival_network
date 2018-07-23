@@ -35,13 +35,11 @@ When two contradictory blocks naturally arise, transaction duplication is expect
 If two versions of a transaction are generated, they will have the same key image, but different one-time recipient stealth address, and different cryptographic signatures. This could occur benignly, if a user regenerates the transaction to the same address (creating a new one-time address in the process). It could also represent a transaction that is being revised to spend to a different recipient. If a double-spend attack is attempted (with or without majority, with or without success), the miner will necessarily have to include a transaction with the same key image, but a different receiving stealth address and signature. While this might happen occasionally due to wallets or users refreshing transactions, an alternative block with several redirected transactions strongly suggests an intentional attempted double-spend attack.
 
 ### General notes:
-The MAP project is a product of Noncesense Research Labs. Feel free to pop into NRL's front lobby on Freenode at #noncesense-research-lab.
-
-We welcome contributions, input, and ideas. 
-
 The `documents` directory in this repository contains the roadmap, information for accessing our nodes, specifications, and miscellaneous notes.
 
 The `analyses` directory includes some preliminary results.
+
+The MAP project is a product of Noncesense Research Labs. Feel free to pop into NRL's front lobby on Freenode at #noncesense-research-lab. We look forward to your contributions and ideas.
 
 ## Request for data
 **If you run a Monero node, please consider contributing your logs pertaining to alternative blocks and reorgs.** Different nodes will receive different alternative blocks, and may undergo different reorganizations. Consequently, differences between your logs and others may provide important clues about network latency and topology.
