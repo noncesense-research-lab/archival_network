@@ -7,22 +7,41 @@
 ### Objective set 1: Data collection and archiving
 There are currently no known resources that archive the content of orphaned blocks or side chains. The total absence of this data precludes analyses that are critical for monitoring the ecosystem and empirically studying mining and network phenomena. Since these types of records are not on the blockchain itself, they are lost to the sands of time unless intentionally preserved. MAP's central mission is to ensure that we are always collecting and analyzing this key information.
 
-The Monero Archival Project employs a custom archival daemon (credit: NeptuneResearch) that collects data from orphaned blocks/chains along with notes from the node itself.
+The Monero Archival Project employs a custom archival daemon (credit: [NeptuneResearch](https://github.com/neptuneresearch)) that collects data from orphaned blocks/chains along with notes from the node itself. Nodes are deloyed globally using virtual private servers (VPS) to capture a broader view of the network and enable representative analyses.
 
-### Objective set 2: Frequency analyses
-Logs such as those produced by the above command contain the heights when alternative blocks are heard, and sometimes reorganized as the longest chain with consensus. Using this data, we can ask questions such as:
-1. How frequent are multiple versions of the same block mined? (lower bound)
-2. What fraction of these alternative blocks result in reorganization? (is this ratio constant for most nodes?)
-3. Given logs from multiple nodes with overlapping times, how often do the records reflect alternative blocks heard by only some of the miners? (Do 99% of the miners receive 99% of the alternative blocks? 50%/50%?)
-4. What does the homogeneity or heterogeneity of alternative block records suggest about the representativeness of the data set?
-5. Are the observed intervals between alternative blocks explained by any particular function? A Poisson distribution has been suggested as the theoretical expectation. How well does the model match observations? What are the parameters of, and deviations from, the distribution function model?
+### Objective set 2: Side chain analyses
+Analysis of MAP records allows us to answer several questions:
+1. How frequently are multiple versions of the same block mined?
+2. What fraction of these alternative blocks result in reorganization?
+3. Are the observed intervals between alternative blocks explained by any particular function? A Poisson distribution has been suggested as the theoretical expectation. How well does the model match observations? What are the parameters of, and deviations from, the distribution function model?
 
-### Objective set 3: Double-spend analysis
+Regarding the frequent long side chains (15-30 blocks, up to 70 blocks long):
+4. Based on the timing of the blocks, how much hashrate is being used to mine them?
+5. Does this hashrate come from external sources (e.g. R & D on FPGAs) or correspond with loss of hash power on the main chain?
+
+### Objective set 3: Double-spend analyses
 Logs that record the content of orphaned blocks can be used to ascertain whether a given alternative block was benign (e.g. arising from network latency) or maliciously presented (e.g. attempting a double-spend attack).
 
 When two contradictory blocks naturally arise, transaction duplication is expected since both miners draw from the same memory pool. In the case that two miners independently mine the same transaction, the {ring members, key image, receiving stealth address} will be mirrored in the two blocks.
 
 If two versions of a transaction are generated, they will have the same key image, but different one-time recipient stealth address, and different cryptographic signatures. This could occur benignly, if a user regenerates the transaction to the same address (creating a new one-time address in the process). It could also represent a transaction that is being revised to spend to a different recipient. If a double-spend attack is attempted (with or without majority, with or without success), the miner will necessarily have to include a transaction with the same key image, but a different receiving stealth address and signature. While this might happen occasionally due to wallets or users refreshing transactions, an alternative block with several redirected transactions strongly suggests an intentional attempted double-spend attack.
+
+### Objective set 4: Network topology and study
+Data from geographically-distributed MAP nodes can be used to study network connectivity and latency. With each new transaction or block broadcast, we can watch the the route(s) and speed with which it propogates across the globe.
+
+### Objective set 5: Timing exploration
+Miners can arbitrarily choose the timestamps that they include in the block, so MAP retains both the miner-reported timestamp (MRT) and the node-receipt timestamp (NRT).Comparison of the timestamps in the block against the timestamps when the block was received will reveal how often the miner-reported timestamps are spoofed.
+
+Similarly, we can look for signs of [selfish mining](https://arxiv.org/pdf/1311.0243.pdf) based on the timing with which blocks are received. Ittay Eyal and Emin Gün Sirer [point out](http://hackingdistributed.com/2014/01/15/detecting-selfish-mining/) that "One could detect this doubling-down scenario by looking at the timestamps on successive blocks in the blockchain. Since mining is essentially an independent random process, we'd expect the interblock time gap to be exponentially distributed. Any deviation from this expectation would be suggestive of selfish mining."
+
+### General notes:
+The MAP project is a product of Noncesense Research Labs. Feel free to pop into NRL's front lobby on Freenode at #noncesense-research-lab.
+
+We welcome contributions, input, and ideas. 
+
+The `documents` directory in this repository contains the roadmap, information for accessing our nodes, specifications, and miscellaneous notes.
+
+The `analyses` directory includes some preliminary results.
 
 ## Request for data
 **If you run a Monero node, please consider contributing your logs pertaining to alternative blocks and reorgs.** Different nodes will receive different alternative blocks, and may undergo different reorganizations. Consequently, differences between your logs and others may provide important clues about network latency and topology.
