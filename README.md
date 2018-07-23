@@ -11,18 +11,18 @@ The Monero Archival Project employs a custom archival daemon (credit: [NeptuneRe
 
 ### Objective set 2: Side chain analyses
 Analysis of MAP records allows us to answer several questions:
-1. How frequently are multiple versions of the same block mined?
-2. What fraction of these alternative blocks result in reorganization?
-3. Are the observed intervals between alternative blocks explained by any particular function? A Poisson distribution has been suggested as the theoretical expectation. How well does the model match observations? What are the parameters of, and deviations from, the distribution function model?
+-  How frequently are multiple versions of the same block mined?
+-  What fraction of these alternative blocks result in reorganization?
+-  Are the observed intervals between alternative blocks explained by any particular function? A Poisson distribution has been suggested as the theoretical expectation. How well does the model match observations? What are the parameters of, and deviations from, the distribution function model?
 
 Regarding the frequent long side chains (15-30 blocks, up to 70 blocks long):
-4. Based on the timing of the blocks, how much hashrate is being used to mine them?
-5. Does this hashrate come from external sources (e.g. R & D on FPGAs) or correspond with loss of hash power on the main chain?
+-  Based on the timing of the blocks, how much hashrate is being used to mine them?
+-  Does this hashrate come from external sources (e.g. R & D on FPGAs) or correspond with loss of hash power on the main chain?
 
 ### Objective set 3: Timing exploration
 Miners can arbitrarily choose the timestamps that they include in the block, so MAP retains both the miner-reported timestamp (MRT) and the node-receipt timestamp (NRT).Comparison of the timestamps in the block against the timestamps when the block was received will reveal how often the miner-reported timestamps are spoofed.
 
-Similarly, we can look for signs of [selfish mining](https://arxiv.org/pdf/1311.0243.pdf) based on the timing with which blocks are received. Ittay Eyal and Emin Gün Sirer [point out](http://hackingdistributed.com/2014/01/15/detecting-selfish-mining/) that "One could detect this doubling-down scenario by looking at the timestamps on successive blocks in the blockchain. Since mining is essentially an independent random process, we'd expect the interblock time gap to be exponentially distributed. Any deviation from this expectation would be suggestive of selfish mining."
+Similarly, we can look for signs of [selfish mining](https://arxiv.org/pdf/1311.0243.pdf) based on the timing with which blocks are received. Ittay Eyal and Emin Gün Sirer [point out](http://hackingdistributed.com/2014/01/15/detecting-selfish-mining/) that "One could detect this [phenomenon] by looking at the timestamps on successive blocks in the blockchain. Since mining is essentially an independent random process, we'd expect the interblock time gap to be exponentially distributed. Any deviation from this expectation would be suggestive of selfish mining."
 
 ### Objective set 4: Network topology and study
 Data from geographically-distributed MAP nodes can be used to study network connectivity and latency. With each new transaction or block broadcast, we can watch the the route(s) and speed with which it propogates across the globe.
