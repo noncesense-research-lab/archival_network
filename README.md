@@ -1,12 +1,51 @@
 # Monero_Archival_Project
-*Investigating the frequency of alternative blocks, reorganizations, and attempted or successful double-spend attacks.*
-
 ![Logo](/misc/map_header.png)
 
 ## Goals
 ### Objective set 1: Data collection and archiving
-There are currently no known resources that archive the content of orphaned blocks. Furthermore, the frequency of alternative blocks and reorganization is logged by some nodes, but not compiled or analyzed.
+There are currently no known resources that archive the content of orphaned blocks or side chains. The total absence of this data precludes analyses that are critical for monitoring the ecosystem and empirically studying mining and network phenomena. Since these types of records are not on the blockchain itself, they are lost to the sands of time unless intentionally preserved. MAP's central mission is to ensure that we are always collecting and analyzing this key information.
 
+The Monero Archival Project employs a custom archival daemon (credit: [NeptuneResearch](https://github.com/neptuneresearch)) that collects data from orphaned blocks/chains along with notes from the node itself. Nodes are deloyed globally using virtual private servers (VPS) to capture a broader view of the network and enable representative analyses.
+
+### Objective set 2: Side chain analyses
+Analysis of MAP records allows us to answer several questions:
+-  How frequently are multiple versions of the same block mined?
+-  What fraction of these alternative blocks result in reorganization?
+-  Are the observed intervals between alternative blocks explained by any particular function? A Poisson distribution has been suggested as the theoretical expectation. How well does the model match observations? What are the parameters of, and deviations from, the distribution function model?
+
+Regarding the frequent long side chains (15-30 blocks, up to 70 blocks long):
+-  Based on the timing of the blocks, how much hashrate is being used to mine them?
+-  Does this hashrate come from external sources (e.g. R & D on FPGAs) or correspond with loss of hash power on the main chain?
+
+### Objective set 3: Timing exploration
+Miners can arbitrarily choose the timestamps that they include in the block, so MAP retains both the miner-reported timestamp (MRT) and the node-receipt timestamp (NRT).Comparison of the timestamps in the block against the timestamps when the block was received will reveal how often the miner-reported timestamps are spoofed.
+
+Similarly, we can look for signs of [selfish mining](https://arxiv.org/pdf/1311.0243.pdf) based on the timing with which blocks are received. Ittay Eyal and Emin Gün Sirer [point out](http://hackingdistributed.com/2014/01/15/detecting-selfish-mining/) that "One could detect this [phenomenon] by looking at the timestamps on successive blocks in the blockchain. Since mining is essentially an independent random process, we'd expect the interblock time gap to be exponentially distributed. Any deviation from this expectation would be suggestive of selfish mining."
+
+### Objective set 4: Network topology and study
+Data from geographically-distributed MAP nodes can be used to study network connectivity and latency. With each new transaction or block broadcast, we can watch the the route(s) and speed with which it propogates across the globe.
+
+### Objective set 5: Double-spend detection 
+Logs that record the content of orphaned blocks can be used to ascertain whether a given alternative block was benign (e.g. arising from network latency) or maliciously presented (e.g. attempting a double-spend attack).
+
+When two contradictory blocks naturally arise, transaction duplication is expected since both miners draw from the same memory pool. In the case that two miners independently mine the same transaction, the {ring members, key image, receiving stealth address} will be mirrored in the two blocks.
+
+If two versions of a transaction are generated, they will have the same key image, but different one-time recipient stealth address, and different cryptographic signatures. This could occur benignly, if a user regenerates the transaction to the same address (creating a new one-time address in the process). It could also represent a transaction that is being revised to spend to a different recipient. If a double-spend attack is attempted (with or without majority, with or without success), the miner will necessarily have to include a transaction with the same key image, but a different receiving stealth address and signature. While this might happen occasionally due to wallets or users refreshing transactions, an alternative block with several redirected transactions strongly suggests an intentional attempted double-spend attack.
+
+### Long-term goals:
+We have several plans for making this type of data common and accessible.
+-  Data presentation on a web dashboard that allows interactive exploration of MAP data products such as navigation of side chans, empirical analytics, and a global view of broadcast propogation.
+-  Integration into main Monero code as an *opt-in* daemon setting for users that wish to collect archival data for R & D purposes.
+-  While our archival daemon is currently coded for Monero, the analyses and framework are applicable to all similarly-structured blockchains. In the future, our network of archival node servers may also provide these services for other projects and cryptocurrencies.
+
+## General notes:
+The `documents` directory in this repository contains the roadmap, information for accessing our nodes, specifications, and miscellaneous notes.
+
+The `analyses` directory includes some preliminary results.
+
+The MAP project is a product of Noncesense Research Labs. Feel free to pop into NRL's front lobby on Freenode at #noncesense-research-lab. We look forward to your contributions and ideas.
+
+## Request for data
 **If you run a Monero node, please consider contributing your logs pertaining to alternative blocks and reorgs.** Different nodes will receive different alternative blocks, and may undergo different reorganizations. Consequently, differences between your logs and others may provide important clues about network latency and topology.
 
 If you run a node, you can extract the pertinent information from your records by running the single command:
@@ -19,45 +58,13 @@ Additionally, the output of monerod's `--alt-chain-info` is quite informative, a
 
 Please upload the results here, anonymously if you so please, to strengthen analyses and expand our sample size. You can also email the file (<= 25 MB) to IsthmusCrypto@protonmail.com
 
-### Objective set 2: Frequency analyses
-Logs such as those produced by the above command contain the heights when alternative blocks are heard, and sometimes reorganized as the longest chain with consensus. Using this data, we can ask questions such as:
-1. How frequent are multiple versions of the same block mined? (lower bound)
-2. What fraction of these alternative blocks result in reorganization? (is this ratio constant for most nodes?)
-3. Given logs from multiple nodes with overlapping times, how often do the records reflect alternative blocks heard by only some of the miners? (Do 99% of the miners receive 99% of the alternative blocks? 50%/50%?)
-4. What does the homogeneity or heterogeneity of alternative block records suggest about the representativeness of the data set?
-5. Are the observed intervals between alternative blocks explained by any particular function? A Poisson distribution has been suggested as the theoretical expectation. How well does the model match observations? What are the parameters of, and deviations from, the distribution function model?
-
-### Objective set 3: Double-spend analysis
-Logs that record the content of orphaned blocks can be used to ascertain whether a given alternative block was benign (e.g. arising from network latency) or maliciously presented (e.g. attempting a double-spend attack).
-
-When two contradictory blocks naturally arise, transaction duplication is expected since both miners draw from the same memory pool. In the case that two miners independently mine the same transaction, the {ring members, key image, receiving stealth address} will be mirrored in the two blocks.
-
-If two versions of a transaction are generated, they will have the same key image, but different one-time recipient stealth address, and different cryptographic signatures. This could occur benignly, if a user regenerates the transaction to the same address (creating a new one-time address in the process). It could also represent a transaction that is being revised to spend to a different recipient. If a double-spend attack is attempted (with or without majority, with or without success), the miner will necessarily have to include a transaction with the same key image, but a different receiving stealth address and signature. While this might happen occasionally due to wallets or users refreshing transactions, an alternative block with several redirected transactions strongly suggests an intentional attempted double-spend attack.
-
-## Provocative Hypotheses
-As the Devil’s advocate, I put forth two hypotheses:
-
-H1) At least one solved block has been broadcast to the Monero network (whether accepted or rejected) that attempts to reassign previously-spent Moneroj to a new recipient stealth address.
-
-H2) A block described as above has been broadcast and attained consensus, becoming the main chain.
-
-## Speculation
-*Notes from MPKT (extracted from casual correspondence):*
-
-Both hypotheses could be proven by finding an example. Neither hypothesis is theoretically falsifiable; however, if we can attain the historical records of orphaned block transaction composition and prove that no H1 blocks were widely received, then both hypotheses can be reasonably rejected for practical intents and purposes. It would be good to prove OR confirm absence of evidence in the dataset.
-
-While I doubt H2 is true, I think that H1 is not an outlandish proposition, especially considering the previous large unknown hashrate. By March & April, I’m sure that the multiple ASIC manufacturers were enforcing decentralization on each other; however, the *first* company with working ASICs may have had a window with some pretty decent power (do we know who was running ASICs in December & January before the February hashrate explosion?).
-
-Honestly, if I was an ASIC manufacturer with enough in-house hash rate to noodle around and conduct mining research, I’d totally try solving a contradictory block or two to see what happens. The nature of selling cryptocurrency equipment would strongly disincentivize me from double-spending to rip off an external entity; however I might quietly try it with test transactions between my own wallets if I thought nobody was paying attention. Of course, H2 is unlikely to be true unless one entity had >51% hash. But H1 could be true even due to a minority player conducting some experiments.
-
-Now that we tweaked PoW algo to kick the ASICS, this is a much less existential question. But I think it would still be good to archive this data moving forward, so that we are prepared for upcoming threats (rapid growth of a vast bontet? FPGA or some kind of ASICs 2.0? A 3-letter agency with a mining farm and an agenda? I suppose we’ll find out …)
-
-# Results
+## Example data
 
 There was a fork at height 1592780, and both sides have been archived
 
-## ---alt-chain-info output
 ```
+---alt-chain-info output
+
 5 alternate chains found:
 19 blocks long, from height 1578847 (13932 deep), diff 15046008135770616: 217bbfe0974a9ced9ff3b848f69f4bc871ac8323b6f67cf669b7ff011514d3e4
 25 blocks long, from height 1565690 (27089 deep), diff 14333944572481961: 1ce9c7f554d0c9f4c709bb3c733803db6b9865a0b9237c2e60654751758de5c3
@@ -71,7 +78,7 @@ There was a fork at height 1592780, and both sides have been archived
 4 blocks long, from height 1589926 (2854 deep), diff 15593988238902517: 5294849d7c578227966a2fb5cb6a4155038464c57c5810d1820b27df826b2487
 1 blocks long, from height 1591490 (1290 deep), diff 15668928217242122: 87c752cdeee4c9ba7aefc879ca1285e39563e1a5c752fc6d8d743a2be452812d
 ```
-## First block at height 1592780
+### First block at height 1592780
 ```
 {
   "major_version": 7, 
@@ -105,7 +112,7 @@ There was a fork at height 1592780, and both sides have been archived
   ]
 }
 ```
-# Alternative block at height 1592780
+### Alternative block at height 1592780
 
 ```
 {
