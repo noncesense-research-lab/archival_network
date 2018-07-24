@@ -34,7 +34,7 @@ If two versions of a transaction are generated, they will have the same key imag
 
 ### Long-term goals:
 We have several plans for making this type of data common and accessible.
--  Data presentation on a web dashboard that allows interactive exploration of MAP data products such as navigation of side chans, empirical analytics, and a global view of broadcast propogation.
+-  Data presentation on a web dashboard that allows interactive exploration of MAP data products such as navigation of alternative chans, empirical analytics, and a global view of broadcast propogation.
 -  Integration into main Monero code as an *opt-in* daemon setting for users that wish to collect archival data for R & D purposes.
 -  While our archival daemon is currently coded for Monero, the analyses and framework are applicable to all similarly-structured blockchains. In the future, our network of archival node servers may also provide these services for other projects and cryptocurrencies.
 
