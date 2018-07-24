@@ -3,17 +3,17 @@
 
 ## Goals
 ### Objective set 1: Data collection and archiving
-There are currently no known resources that archive the content of orphaned blocks or side chains. The total absence of this data precludes analyses that are critical for monitoring the ecosystem and empirically studying mining and network phenomena. Since these types of records are not on the blockchain itself, they are lost to the sands of time unless intentionally preserved. MAP's central mission is to ensure that we are always collecting and analyzing this key information.
+There are currently no known resources that archive the content of orphaned blocks or alternative chains. The total absence of this data precludes analyses that are critical for monitoring the ecosystem and empirically studying mining and network phenomena. Since these types of records are not on the blockchain itself, they are lost to the sands of time unless intentionally preserved. MAP's central mission is to ensure that we are always collecting and analyzing this key information.
 
 The Monero Archival Project employs a custom archival daemon (credit: [NeptuneResearch](https://github.com/neptuneresearch)) that collects data from orphaned blocks/chains along with notes from the node itself. Nodes are deloyed globally using virtual private servers (VPS) to capture a broader view of the network and enable representative analyses.
 
-### Objective set 2: Side chain analyses
+### Objective set 2: Alternative chain analyses
 Analysis of MAP records allows us to answer several questions:
 -  How frequently are multiple versions of the same block mined?
 -  What fraction of these alternative blocks result in reorganization?
 -  Are the observed intervals between alternative blocks explained by any particular function? A Poisson distribution has been suggested as the theoretical expectation. How well does the model match observations? What are the parameters of, and deviations from, the distribution function model?
 
-Regarding the frequent long side chains (15-30 blocks, up to 70 blocks long):
+Regarding the frequent long alternative chains (15-30 blocks, up to 70 blocks long):
 -  Based on the timing of the blocks, how much hashrate is being used to mine them?
 -  Does this hashrate come from external sources (e.g. R & D on FPGAs) or correspond with loss of hash power on the main chain?
 
