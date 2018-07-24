@@ -1,5 +1,4 @@
-# Monero_Archival_Project
-![Logo](/misc/map_header.png)
+![Monero Archival Project](/misc/map_header.png)
 
 ## Goals
 ### Objective set 1: Data collection and archiving
