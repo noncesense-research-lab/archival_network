@@ -3,7 +3,7 @@
 ## Contributors
 Archival daemon development: [NeptuneResearch](https://github.com/neptuneresearch)
 
-Analysis: [IsthmusCrypto](https://github.com/mitchellpkt) and [NeffMalon](https://github.com/neffmalon)
+Analysis: [IsthmusCrypto](https://github.com/mitchellpkt) and [Nathan](https://github.com/neffmallon)
 
 Server support: [SerHack](https://serhack.me) and [IsthmusCrypto](https://github.com/mitchellpkt)
 
