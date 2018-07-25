@@ -1,10 +1,17 @@
 ![Monero Archival Project](/misc/map_header.png)
 
+## Contributors
+Archival daemon development: [NeptuneResearch](https://github.com/neptuneresearch)
+
+Analysis: [IsthmusCrypto](https://github.com/mitchellpkt) and [Nathan](https://github.com/neffmallon)
+
+Server support: [SerHack](https://serhack.me) and [IsthmusCrypto](https://github.com/mitchellpkt)
+
 ## Goals
 ### Objective set 1: Data collection and archiving
 There are currently no known resources that archive the content of orphaned blocks or alternative chains. The total absence of this data precludes analyses that are critical for monitoring the ecosystem and empirically studying mining and network phenomena. Since these types of records are not on the blockchain itself, they are lost to the sands of time unless intentionally preserved. MAP's central mission is to ensure that we are always collecting and analyzing this key information.
 
-The Monero Archival Project employs a custom archival daemon (credit: [NeptuneResearch](https://github.com/neptuneresearch)) that collects data from orphaned blocks/chains along with notes from the node itself. Nodes are deloyed globally using virtual private servers (VPS) to capture a broader view of the network and enable representative analyses.
+The Monero Archival Project employs a custom archival daemon that collects data from orphaned blocks/chains along with notes from the node itself. Nodes are deloyed globally using virtual private servers (VPS) to capture a broader view of the network and enable representative analyses.
 
 ### Objective set 2: Alternative chain analyses
 Analysis of MAP records allows us to answer several questions:
