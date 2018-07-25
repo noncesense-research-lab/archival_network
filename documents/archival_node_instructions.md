@@ -4,7 +4,17 @@ This document contains information about the current configuration of our VPS-ba
 
 ## Access
 
-`$ ssh map@xxx.xxx.xxx.43` (e.g. for the Tokyo node)
+`$ ssh map@xxx.xxx.xxx.43 -p PORT` (e.g. for the Tokyo node) where the PORT is a secret port communicated by SerHack.
+
+## Hostname
+
+MAP-NAME-NUMBER
+
+where :
+* MAP stands for Monero Archivial Project
+* NAME is the name of the nearest city where the node is (example TOKYO is TOKYO)
+* NUMBER is the number of the node related to that city (int, it starts from 0)
+
 
 ## Layout
 
