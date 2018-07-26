@@ -28,7 +28,7 @@ The monerod daemon lives in `~/monero_node/bin/monero-v0.12.3.0`
 
 Please start the daemon using the command: 
 
-`./monerod --detach --log-level 0 --hide-my-port --show-time-stats 1`
+`./monerod --detach --log-level 1 --hide-my-port --show-time-stats 1`
 
 (this is contained in `start_node_background.sh`)
 
