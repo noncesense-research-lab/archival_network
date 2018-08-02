@@ -1,1 +1,1 @@
-grep 1 {" /opt/monerodarchive/archive.log
+grep '1 {"' /opt/monerodarchive/archive.log
