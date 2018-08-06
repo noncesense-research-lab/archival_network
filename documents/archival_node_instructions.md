@@ -39,4 +39,6 @@ To watch the daemon output, run:
 
 Uptime is important. If you are doing work or testing that will take archival nodes offline, please contain disruptions to the Tokyo server.
 
-If you kill monerod, please restart it before exiting (instructions above)
+If you kill monerod, please restart it before exiting (instructions above).
+
+**No mining is allowed on any of the current MAP nodes, because this may violate the VPS host terms of service.** From a scientific/archival perspective, it would be interesting to have records from a node that also mines (as a control case, essentially), so please let us know if you are willing to run the archival daemon on one of your mining rigs.
