@@ -37,7 +37,9 @@ Please start the daemon using the command:
 To watch the daemon output, run:
 `$ tail -f ~/.bitmonero/bitmonero.log`
 
-Uptime is important. If you are doing work or testing that will take archival nodes offline, please contain disruptions to the Tokyo server.
+In each node there is CollectD, a daemon which collects statistics for Network, Disk, Ram, cpu, uptime etc. Then all the data will be sent to a InfluxDB. After that, Grafana will build graphics based on data captured from Nodes. 
+
+Uptime is important. If you are doing work or testing that will take archival nodes offline, please contain disruptions to the Tokyo server.  
 
 If you kill monerod, please restart it before exiting (instructions above).
 
