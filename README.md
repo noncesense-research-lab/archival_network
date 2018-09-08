@@ -60,7 +60,7 @@ If you run a node, you can extract the pertinent information from your records b
 
 *Note: grep is a command that searches for text in files, {Hydrogen, Wolfram, Helium, and Lithium} are Monero release names, and {"ALTERNATIVE" and "REORG"} search strings are used to extract the relevant events. The "> output_log_to_share.txt" stores the extracted log events in a file with that name. Feel free to change the output filename.*
 
-Additionally, the output of monerod's `--alt-chain-info` is quite informative, and very welcomed! Especially seeking this information from long-running nodes.
+Additionally, the output of monerod's `alt_chain_info` is quite informative, and very welcomed! Especially seeking this information from long-running nodes.
 
 Please upload the results here, anonymously if you so please, to strengthen analyses and expand our sample size. You can also email the file (<= 25 MB) to IsthmusCrypto@protonmail.com
 
