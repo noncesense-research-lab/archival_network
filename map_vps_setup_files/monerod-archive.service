@@ -1,0 +1,25 @@
+##############################################################
+#  Monero Archival Project
+#  monerod-archive-v7 
+#
+#  Location: /etc/systemd/system/monerod-archive.service
+##############################################################
+
+[Unit]
+Description=Monero Archive Full Node
+After=network.target
+
+[Service]
+User=map
+Group=map
+WorkingDirectory=~
+
+# Clearnet config
+Type=forking
+PIDFile=/home/map/monerod-archive.pid
+ExecStart=/usr/bin/monero/monerod-archive-v7 --detach --config-file /etc/monerod-archive.conf --pidfile /home/map/monerod-archive.pid
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
