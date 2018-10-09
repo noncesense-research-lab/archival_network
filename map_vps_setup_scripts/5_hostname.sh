@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 echo Enter the city this MAP node where is located:
 read -r city
 echo Enter the index of this MAP node in that city:

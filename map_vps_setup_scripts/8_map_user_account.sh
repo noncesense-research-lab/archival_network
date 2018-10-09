@@ -1,5 +1,7 @@
-#!/bin/sh
-adduser map
-usermod -aG sudo map
-groupadd sshusers
-adduser map sshusers
+#!/bin/bash
+echo -- MAP User Account: When prompted for UNIX Password, enter the private local password for map user. --
+echo -- MAP User Account: When prompted for User Information, press ENTER for defaults. --
+sudo adduser map
+sudo usermod -aG sudo map
+sudo groupadd sshusers
+sudo adduser map sshusers

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 sudo apt-get install ufw
 sudo ufw default allow outgoing
 sudo ufw default deny incoming
