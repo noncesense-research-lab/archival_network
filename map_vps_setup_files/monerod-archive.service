@@ -14,7 +14,7 @@ After=network.target
 User=map
 Group=map
 WorkingDirectory=~
-RuntimeDirectory=monero
+RuntimeDirectory=monerod-archive
 
 # Clearnet config
 Type=forking
