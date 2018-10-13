@@ -5,3 +5,4 @@ sudo adduser map
 sudo usermod -aG sudo map
 sudo groupadd sshusers
 sudo adduser map sshusers
+echo Complete: 8_map_user_account

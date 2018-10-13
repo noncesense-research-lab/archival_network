@@ -5,3 +5,4 @@ echo Enter the index of this MAP node in that city:
 read -r cityindex
 echo "MAP-$city-$cityindex" > /etc/hostname
 sudo hostname -F /etc/hostname
+echo Complete: 5_hostname

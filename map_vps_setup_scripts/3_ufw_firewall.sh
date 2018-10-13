@@ -6,3 +6,4 @@ sudo ufw allow from any to any port 4422 proto tcp
 sudo ufw allow from any to any port 18080 proto tcp
 sudo ufw enable
 sudo ufw logging on
+echo Complete: 3_ufw_firewall

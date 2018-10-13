@@ -12,10 +12,12 @@ sudo chmod +x ./9_sshd_config.sh
 sudo chmod +x ./10_sshd_authorized_keys.sh
 sudo chmod +x ./11_sshd_restart.sh
 sudo chmod +x ./12_monerod_archive_directories.sh
-sudo chmod +x ./13_monerod_archive_conf.sh
-sudo chmod +x ./14_monerod_archive_service.sh
-sudo chmod +x ./15_logrotate_setup.sh
-sudo chmod +x ./16_collectd_setup.sh
+sudo chmod +x ./13_monerod_archive_download.sh
+sudo chmod +x ./14_monerod_archive_conf.sh
+sudo chmod +x ./15_monerod_archive_service.sh
+sudo chmod +x ./16_logrotate_setup.sh
+sudo chmod +x ./17_collectd_setup.sh
+echo Complete: 0_map_vps_setup
 
 # Run scripts
 echo -- 1_software_update
@@ -66,17 +68,22 @@ echo -- 12_monerod_archive_directories
 sudo bash ./12_monerod_archive_directories.sh
 read -rsp $'-- Press any key to continue --\n' -n 1 key
 
-echo -- 13_monerod_archive_conf
-sudo bash ./13_monerod_archive_conf.sh
+echo -- 13_monerod_archive_download
+sudo bash ./13_monerod_archive_download.sh
 read -rsp $'-- Press any key to continue --\n' -n 1 key
 
-#TODO
-#echo -- 14_monerod_archive_service.sh
-#sudo bash ./14_monerod_archive_service.sh
-#read -rsp $'-- Press any key to continue --\n' -n 1 key
-#echo -- 15_logrotate_setup.sh
-#sudo bash ./15_logrotate_setup.sh
-#read -rsp $'-- Press any key to continue --\n' -n 1 key
-#echo -- 16_collectd_setup.sh
-#sudo bash ./16_collectd_setup.sh
-#read -rsp $'-- Press any key to continue --\n' -n 1 key
+echo -- 14_monerod_archive_conf.sh
+sudo bash ./14_monerod_archive_conf.sh
+read -rsp $'-- Press any key to continue --\n' -n 1 key
+
+echo -- 15_monerod_archive_service.sh
+sudo bash ./15_monerod_archive_service.sh
+read -rsp $'-- Press any key to continue --\n' -n 1 key
+
+echo -- 16_logrotate_setup.sh
+sudo bash ./16_logrotate_setup.sh
+read -rsp $'-- Press any key to continue --\n' -n 1 key
+
+echo -- 17_collectd_setup.sh
+sudo bash ./17_collectd_setup.sh
+read -rsp $'-- Press any key to continue --\n' -n 1 key
