@@ -3,6 +3,7 @@
 #  monerod-archive-v8 
 #
 #  Location: /etc/systemd/system/monerod-archive.service
+#  Based on https://github.com/monero-project/monero/utils/systemd/monerod.service
 ##############################################################
 
 [Unit]
@@ -13,11 +14,12 @@ After=network.target
 User=map
 Group=map
 WorkingDirectory=~
+RuntimeDirectory=monero
 
 # Clearnet config
 Type=forking
-PIDFile=/home/map/monerod-archive.pid
-ExecStart=/usr/bin/monero/monerod-archive-v8 --detach --config-file /etc/monerod-archive.conf --pidfile /home/map/monerod-archive.pid
+PIDFile=/run/monerod-archive/monerod-archive.pid
+ExecStart=/usr/bin/monero/monerod-archive-v8 --detach --config-file /etc/monerod-archive.conf --pidfile /run/monerod-archive/monerod-archive.pid
 
 Restart=always
 
