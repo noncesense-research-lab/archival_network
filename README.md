@@ -3,9 +3,9 @@
 ## Contributors
 Archival daemon development: [NeptuneResearch](https://github.com/neptuneresearch)
 
-Analysis: [IsthmusCrypto](https://github.com/mitchellpkt) and [Nathan](https://github.com/neffmallon)
+Analysis: [Isthmus](https://github.com/mitchellpkt) and [Nathan](https://github.com/neffmallon)
 
-Server support: [SerHack](https://serhack.me) and [IsthmusCrypto](https://github.com/mitchellpkt)
+Server support: [gingeropolous](https://github.com/gingeropolous), [Isthmus](https://github.com/mitchellpkt), and [SerHack](https://serhack.me)
 
 ## Goals
 ### Objective set 1: Data collection and archiving
