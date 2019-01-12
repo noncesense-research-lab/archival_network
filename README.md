@@ -24,7 +24,7 @@ Regarding the frequent long alternative chains (15-30 blocks, up to 70 blocks lo
 -  Does this hashrate come from external sources (e.g. R & D on FPGAs) or correspond with loss of hash power on the main chain?
 
 ### Objective set 3: Timing exploration
-Miners can arbitrarily choose the timestamps that they include in the block, so MAP retains both the miner-reported timestamp (MRT) and the node-receipt timestamp (NRT).Comparison of the timestamps in the block against the timestamps when the block was received will reveal how often the miner-reported timestamps are spoofed.
+Miners can arbitrarily choose the timestamps that they include in the block, so MAP retains both the miner-reported timestamp (MRT) and the node-receipt timestamp (NRT). Comparison of the timestamps in the block against the timestamps when the block was received will reveal how often the miner-reported timestamps are spoofed.
 
 Similarly, we can look for signs of [selfish mining](https://arxiv.org/pdf/1311.0243.pdf) based on the timing with which blocks are received. Ittay Eyal and Emin Gün Sirer [point out](http://hackingdistributed.com/2014/01/15/detecting-selfish-mining/) that "One could detect this [phenomenon] by looking at the timestamps on successive blocks in the blockchain. Since mining is essentially an independent random process, we'd expect the interblock time gap to be exponentially distributed. Any deviation from this expectation would be suggestive of selfish mining."
 
