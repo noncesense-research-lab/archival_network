@@ -2,6 +2,8 @@
 
 The Noncesense archival network employs custom daemons that collect unique empricial data for research purposes, currently deployed on the Monero and Loki networks. 
 
+The archival network is a FOSS product of [#noncesense-research-lab](https://www.irccloud.com/invite?channel=%23noncesense-research-lab&hostname=chat.freenode.net&port=6697&ssl=1). Feel free to pop into NRL's front lobby on Freenode at #noncesense-research-lab, or on Discord at [https://discord.gg/WC3gRE](https://discord.gg/WC3gRE). We look forward to your contributions and ideas.
+
 ## Contributors
 Archival daemon development: [NeptuneResearch](https://github.com/neptuneresearch)
 
@@ -46,7 +48,7 @@ The `documents` directory in this repository contains the roadmap, information f
 
 The `analyses` directory includes some preliminary results.
 
-The archival network is a product of [#noncesense-research-lab](https://www.irccloud.com/invite?channel=%23noncesense-research-lab&hostname=chat.freenode.net&port=6697&ssl=1). Feel free to pop into NRL's front lobby on Freenode at #noncesense-research-lab, or on Discord at h[ttps://discord.gg/WC3gRE](https://discord.gg/WC3gRE). We look forward to your contributions and ideas.
+Archival daemon code is available at: [https://github.com/neptuneresearch/monerod-archive](https://github.com/neptuneresearch/monerod-archive)
 
 ## Example data
 
