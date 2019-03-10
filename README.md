@@ -15,7 +15,7 @@ Server support: [gingeropolous](https://github.com/gingeropolous), [Isthmus](htt
 ### Objective set 1: Data collection and archiving
 Prior to the Noncesense archival network (previously known as the *Monero Archival Project*) there was no known resources that archived the content of orphaned blocks or alternative chains on most CryptoNote currencies. The total absence of this data precluded analyses that are critical for monitoring the ecosystem and empirically studying mining and network phenomena. Since these types of records are not on the blockchain itself, they are lost to the sands of time unless intentionally preserved. The Noncesense archival network's central mission is to ensure that we are always collecting and analyzing this key information.
 
-The Noncesense archival network employs custom archival daemons that collect data from orphaned blocks/chains along with notes from the node itself. Nodes are deloyed globally using virtual private servers (VPS) to capture a broader view of the network and enable representative analyses.
+The Noncesense archival network employs custom archival daemons that collect data from orphaned blocks/chains along with notes from the node itself. Nodes are deployed globally using virtual private servers (VPS) to capture a broader view of the network and enable representative analyses.
 
 ### Objective set 2: Alternative chain analyses
 Analysis of archival records allows us to answer several questions:
