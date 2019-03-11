@@ -1,4 +1,8 @@
-![Monero Archival Project](/misc/map_header.png)
+# Noncesense archival network
+
+The Noncesense archival network employs custom daemons that collect unique empricial data for research purposes, currently deployed on the Monero and Loki networks. 
+
+The archival network is a FOSS product of [#noncesense-research-lab](https://www.irccloud.com/invite?channel=%23noncesense-research-lab&hostname=chat.freenode.net&port=6697&ssl=1). Feel free to pop into NRL's front lobby on Freenode at #noncesense-research-lab, or on Discord at [https://discord.gg/WC3gRE](https://discord.gg/WC3gRE). We look forward to your contributions and ideas.
 
 ## Contributors
 Archival daemon development: [NeptuneResearch](https://github.com/neptuneresearch)
@@ -9,19 +13,15 @@ Server support: [gingeropolous](https://github.com/gingeropolous), [Isthmus](htt
 
 ## Goals
 ### Objective set 1: Data collection and archiving
-There are currently no known resources that archive the content of orphaned blocks or alternative chains. The total absence of this data precludes analyses that are critical for monitoring the ecosystem and empirically studying mining and network phenomena. Since these types of records are not on the blockchain itself, they are lost to the sands of time unless intentionally preserved. MAP's central mission is to ensure that we are always collecting and analyzing this key information.
+Prior to the Noncesense archival network (previously known as the *Monero Archival Project*) there was no known resources that archived the content of orphaned blocks or alternative chains on most CryptoNote currencies. The total absence of this data precluded analyses that are critical for monitoring the ecosystem and empirically studying mining and network phenomena. Since these types of records are not on the blockchain itself, they are lost to the sands of time unless intentionally preserved. The Noncesense archival network's central mission is to ensure that we are always collecting and analyzing this key information.
 
-The Monero Archival Project employs a custom archival daemon that collects data from orphaned blocks/chains along with notes from the node itself. Nodes are deloyed globally using virtual private servers (VPS) to capture a broader view of the network and enable representative analyses.
+The Noncesense archival network employs custom archival daemons that collect data from orphaned blocks/chains along with notes from the node itself. Nodes are deployed globally using virtual private servers (VPS) to capture a broader view of the network and enable representative analyses.
 
 ### Objective set 2: Alternative chain analyses
-Analysis of MAP records allows us to answer several questions:
+Analysis of archival records allows us to answer several questions:
 -  How frequently are multiple versions of the same block mined?
 -  What fraction of these alternative blocks result in reorganization?
 -  Are the observed intervals between alternative blocks explained by any particular function? A Poisson distribution has been suggested as the theoretical expectation. How well does the model match observations? What are the parameters of, and deviations from, the distribution function model?
-
-Regarding the frequent long alternative chains (15-30 blocks, up to 70 blocks long):
--  Based on the timing of the blocks, how much hashrate is being used to mine them?
--  Does this hashrate come from external sources (e.g. R & D on FPGAs) or correspond with loss of hash power on the main chain?
 
 ### Objective set 3: Timing exploration
 Miners can arbitrarily choose the timestamps that they include in the block, so MAP retains both the miner-reported timestamp (MRT) and the node-receipt timestamp (NRT). Comparison of the timestamps in the block against the timestamps when the block was received will reveal how often the miner-reported timestamps are spoofed.
@@ -40,50 +40,20 @@ If two versions of a transaction are generated, they will have the same key imag
 
 ### Long-term goals:
 We have several plans for making this type of data common and accessible.
--  Data presentation on a web dashboard that allows interactive exploration of MAP data products such as navigation of alternative chans, empirical analytics, and a global view of broadcast propogation.
--  Integration into main Monero code as an *opt-in* daemon setting for users that wish to collect archival data for R & D purposes.
--  While our archival daemon is currently coded for Monero, the analyses and framework are applicable to all similarly-structured blockchains. In the future, our network of archival node servers may also provide these services for other projects and cryptocurrencies.
+-  Data presentation on a web dashboard that allows interactive exploration of archival network data products such as navigation of alternative chans, empirical analytics, and a global view of broadcast propogation.
+-  Integration into main Monero codebase as an *opt-in* daemon setting for users that wish to collect archival data for R & D purposes.
 
 ## General notes:
 The `documents` directory in this repository contains the roadmap, information for accessing our nodes, specifications, and miscellaneous notes.
 
 The `analyses` directory includes some preliminary results.
 
-The MAP project is a product of Noncesense Research Labs. Feel free to pop into NRL's front lobby on Freenode at #noncesense-research-lab. We look forward to your contributions and ideas.
-
-## Request for data
-**If you run a Monero node, please consider contributing your logs pertaining to alternative blocks and reorgs.** Different nodes will receive different alternative blocks, and may undergo different reorganizations. Consequently, differences between your logs and others may provide important clues about network latency and topology.
-
-If you run a node, you can extract the pertinent information from your records by running the single command:
-
-`grep -B2 Hydrogen\|Wolfram\|Helium\|Lithium\|ALTERNATIVE\|REORG\|stopped\ successfully -E bitmonero.log* > output_log_to_share.txt`
-
-*Note: grep is a command that searches for text in files, {Hydrogen, Wolfram, Helium, and Lithium} are Monero release names, and {"ALTERNATIVE" and "REORG"} search strings are used to extract the relevant events. The "> output_log_to_share.txt" stores the extracted log events in a file with that name. Feel free to change the output filename.*
-
-Additionally, the output of monerod's `alt_chain_info` is quite informative, and very welcomed! Especially seeking this information from long-running nodes.
-
-Please upload the results here, anonymously if you so please, to strengthen analyses and expand our sample size. You can also email the file (<= 25 MB) to IsthmusCrypto@protonmail.com
+Archival daemon code is available at: [https://github.com/neptuneresearch/monerod-archive](https://github.com/neptuneresearch/monerod-archive)
 
 ## Example data
 
 There was a fork at height 1592780, and both sides have been archived
 
-```
----alt-chain-info output
-
-5 alternate chains found:
-19 blocks long, from height 1578847 (13932 deep), diff 15046008135770616: 217bbfe0974a9ced9ff3b848f69f4bc871ac8323b6f67cf669b7ff011514d3e4
-25 blocks long, from height 1565690 (27089 deep), diff 14333944572481961: 1ce9c7f554d0c9f4c709bb3c733803db6b9865a0b9237c2e60654751758de5c3
-6 blocks long, from height 1587293 (5486 deep), diff 15469073606002084: b4bd6b85aed05b351b2a8f225910009711ffec35a8d944ea0a0901b12155514c
-4 blocks long, from height 1589926 (2853 deep), diff 15593988238902517: 5294849d7c578227966a2fb5cb6a4155038464c57c5810d1820b27df826b2487
-1 blocks long, from height 1591490 (1289 deep), diff 15668928217242122: 87c752cdeee4c9ba7aefc879ca1285e39563e1a5c752fc6d8d743a2be452812d
-5 alternate chains found:
-19 blocks long, from height 1578847 (13933 deep), diff 15046008135770616: 217bbfe0974a9ced9ff3b848f69f4bc871ac8323b6f67cf669b7ff011514d3e4
-25 blocks long, from height 1565690 (27090 deep), diff 14333944572481961: 1ce9c7f554d0c9f4c709bb3c733803db6b9865a0b9237c2e60654751758de5c3
-6 blocks long, from height 1587293 (5487 deep), diff 15469073606002084: b4bd6b85aed05b351b2a8f225910009711ffec35a8d944ea0a0901b12155514c
-4 blocks long, from height 1589926 (2854 deep), diff 15593988238902517: 5294849d7c578227966a2fb5cb6a4155038464c57c5810d1820b27df826b2487
-1 blocks long, from height 1591490 (1290 deep), diff 15668928217242122: 87c752cdeee4c9ba7aefc879ca1285e39563e1a5c752fc6d8d743a2be452812d
-```
 ### First block at height 1592780
 ```
 {
