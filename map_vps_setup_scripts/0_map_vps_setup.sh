@@ -17,6 +17,7 @@ sudo chmod +x ./14_monerod_archive_conf.sh
 sudo chmod +x ./15_monerod_archive_service.sh
 sudo chmod +x ./16_logrotate_setup.sh
 sudo chmod +x ./17_collectd_setup.sh
+sudo chmod +x ./18_notify_setup.sh
 echo Complete: 0_map_vps_setup
 
 # Run scripts
@@ -86,4 +87,8 @@ read -rsp $'-- Press any key to continue --\n' -n 1 key
 
 echo -- 17_collectd_setup.sh
 sudo bash ./17_collectd_setup.sh
+read -rsp $'-- Press any key to continue --\n' -n 1 key
+
+echo -- 18_notify_setup.sh
+sudo bash ./18_notify_setup.sh
 read -rsp $'-- Press any key to continue --\n' -n 1 key
